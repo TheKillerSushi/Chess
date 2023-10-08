@@ -42,6 +42,7 @@ class Pawn:
             self.turn += 1
             board.pieces[new_board_pos[0]][new_board_pos[1]] = Pawn(new_board_pos, self.color, self.turn)
             board.print_board()
+            return 0
             
 
             

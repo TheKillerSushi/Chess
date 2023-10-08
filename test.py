@@ -11,7 +11,26 @@ pieces = [[none([0,0],0),none([0,1],0),none([0,2],0),none([0,3],0),none([0,4],0)
           [none([7,0],0),none([7,1],0),none([7,2],0),none([7,3],0),none([7,4],0),none([7,5],0),none([7,6],0),none([7,7],0)]]
 b = board(pieces)
 
+
+p = int(input("Would you like to play in literal mode or logic mode (human coordinate pairs or computer coordinate pairs)? 1 or 0: "))
+
 b.print_board()
 
-
-print("")
+i = ""
+tt = 0
+turn_c = "white"
+turn_c_i = 1
+while i != "end":
+    
+    i = input(f"What is the move you would like to make {turn_c}? ")
+    if i == "end":
+        print(f"{turn_c} wins in {tt} moves")
+        break
+    if b.pieces[int(i[0]) - p][int(i[1]) - p].color == turn_c_i:
+        if b.pieces[int(i[0]) - p][int(i[1]) - p].move([int(i[2]) - p, int(i[3]) - p], b) == 0:
+            if turn_c == "white":
+                turn_c = "black"
+            else:
+                turn_c = "white"
+            turn_c_i *= -1
+            tt += 1

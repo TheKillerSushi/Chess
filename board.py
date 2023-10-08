@@ -1,5 +1,9 @@
 # A square has its [piece value, [coordinates: x, y], color_id: 1 or -1
 
+# Delay notice:
+#  Optional thing see line 65 if you do not want delay and put a # in front of it!!!
+import time
+
 class board:
     def __init__(self, pieces):
         self.pieces = pieces
@@ -30,9 +34,9 @@ class board:
                     id = " "
                 else:
                     if self.pieces[x][y].color == 1:
-                        id = "w"
+                        id = "W"
                     else:
-                        id = "b"
+                        id = "B"
                 if self.pieces[x][y].color != 0:   
                     val = self.pieces[x][y].val
                 else:
@@ -59,7 +63,7 @@ class board:
                 
                 line += square
             line += "|"
-            
+            time.sleep(0.2)
             print(line)
             print("---------------------------------")
             z += 1
