@@ -37,24 +37,24 @@ class board:
                         id = "W"
                     else:
                         id = "B"
-                if self.pieces[x][y].color != 0:   
-                    val = self.pieces[x][y].val
-                else:
-                    val = 0
+                #if self.pieces[x][y].color != 0:   
+                #    val = self.pieces[x][y].val
+                #else:
+                #    val = 0
                     
-                if val == 0:
+                if self.pieces[x][y].val == 0:
                     square_id.append("  ")
-                elif val == 1:
+                elif self.pieces[x][y].val == 1:
                     square_id.append("Pa")
-                elif val == 2:
+                elif self.pieces[x][y].val == 2:
                     square_id.append("Kn")
-                elif val == 3:
+                elif self.pieces[x][y].val == 3:
                     square_id.append("Bi")
-                elif val == 4:
+                elif self.pieces[x][y].val == 4:
                     square_id.append("Ro")
-                elif val == 5:
+                elif self.pieces[x][y].val == 5:
                     square_id.append("Qu")
-                elif val == 6:
+                elif self.pieces[x][y].val == 6:
                     square_id.append("Ki")
                   
                 square_id.append(id)
@@ -63,7 +63,7 @@ class board:
                 
                 line += square
             line += "|"
-            time.sleep(0.2)
+            #time.sleep(0.2)
             print(line)
             print("---------------------------------")
             z += 1
